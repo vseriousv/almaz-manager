@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Добавляю вывод отладочной информации при сборке и запуске
+  // Add debug information output during build and runtime
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
-  // Отключаю сервер-рендеринг для тестирования
-  // Это заставит компонент выполняться только на клиенте
+  // Disable server-side rendering for testing
+  // This will force components to run only on the client
   experimental: {
     serverMinification: false,
     serverSourceMaps: true,
@@ -20,7 +20,7 @@ const nextConfig = {
     },
   },
   webpack: (config) => {
-    // Фикс для модулей Node.js, которые не могут быть использованы на клиенте
+    // Fix for Node.js modules that cannot be used on the client
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
@@ -29,7 +29,7 @@ const nextConfig = {
     
     return config;
   },
-  // Отключаем защиту для тестирования
+  // Disable protection for testing
   output: 'standalone',
   outputFileTracing: true,
 };
