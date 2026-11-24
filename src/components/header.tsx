@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { LanguageToggle } from '@/components/ui/language-toggle';
 import { AppBar, Box, Container, Toolbar, Typography } from '@mui/material';
 import { useLocalization } from '@/lib/utils/i18n';
 
@@ -44,7 +43,6 @@ export function Header() {
           <Box sx={{ flexGrow: 1 }} />
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <LanguageToggle />
             <ThemeToggle />
           </Box>
         </Toolbar>
